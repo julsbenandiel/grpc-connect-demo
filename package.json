@@ -1,0 +1,35 @@
+{
+  "name": "grpc-connect-demo",
+  "version": "1.0.0",
+  "description": "grpc service with connectrpc",
+  "main": "main.ts",
+  "repository": "github.com/julsbenandiel/grpc-connect-demo",
+  "author": "juls",
+  "license": "MIT",
+  "private": null,
+  "scripts": {
+    "buf-lint": "npx buf lint",
+    "buf-gen": "npx buf generate",
+    "dev": "npx tsx watch server.ts",
+    "client": "npx tsc client.ts"
+  },
+  "dependencies": {
+    "@bufbuild/buf": "^1.45.0",
+    "@bufbuild/protobuf": "^1.0.0",
+    "@bufbuild/protoc-gen-es": "^1.0.0",
+    "@connectrpc/connect": "^1.0.0",
+    "@connectrpc/connect-express": "^1.0.0",
+    "@connectrpc/connect-node": "^1.0.0",
+    "@connectrpc/protoc-gen-connect-es": "^1.0.0",
+    "@types/node": "^22.7.7",
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "fastify": "^5.0.0",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.3"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0"
+  }
+}
