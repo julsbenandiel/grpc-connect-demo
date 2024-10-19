@@ -8,7 +8,7 @@ note: uses [buf](https://buf.build/docs/) to generate proto definitions instead 
 - **proto**: where proto files are stored
 
 ### ✔ testing
-**Call client using curl:** \
+**Call client using curl:**
 ```
 curl \
   --header 'Content-Type: application/json' \
@@ -16,10 +16,10 @@ curl \
   http://localhost:8080/todo.TodoService/GetTodoList
 ```
   
-**Call client using postman:** \
+**Call client using postman:**
 ```
-method: POST \
-body: {} \
+method: POST
+body: {} - empty object (need, else it throws error)
 url: http://localhost:8080/todo.TodoService/GetTodoList
 ```
 
