@@ -1,5 +1,11 @@
 ## Services
 
+## connect-client
+### ✔ Notes
+ - get definition from buf schema registry
+ - to start app, run `npm run dev`
+
+
 ## todo-service
 ### ✔ Foldering
 - **handlers**: service implementation
