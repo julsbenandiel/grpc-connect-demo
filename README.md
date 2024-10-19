@@ -1,7 +1,5 @@
 ## Preview
-https://github.com/user-attachments/assets/c09f687f-27e8-48a5-af9f-4160183c9893
-Uploading Screen Recording 2024-10-19 at 11.16.13 PM.mov…
-
+![poc-1](https://github.com/user-attachments/assets/4e5e3230-ad6c-4b7a-85b6-fe2791d20d14)
 --------------------------------
 
 ## Services
