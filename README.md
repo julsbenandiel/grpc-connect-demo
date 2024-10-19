@@ -9,13 +9,13 @@ note: uses [buf](https://buf.build/docs/) to generate proto definitions instead 
 
 ## Notes
 ##### todo-service
-**Call client using curl:**
+**Call client using curl:** \
 curl \
   --header 'Content-Type: application/json' \
   --data '{}' \
   http://localhost:8080/todo.TodoService/GetTodoList
   
-**Call client using postman:**
-method: POST
-body: {}
+**Call client using postman:** \
+method: POST \
+body: {} \
 url: http://localhost:8080/todo.TodoService/GetTodoList
