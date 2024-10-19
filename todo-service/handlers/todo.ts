@@ -32,7 +32,12 @@ export function todoServiceHandler(router: ConnectRouter) {
       if (req.q)
         set(filters, 'where.todo.contains', req.q)
       
-      const todoList = await prisma.todo.findMany(filters)
+      const todoList = (await prisma.todo.findMany({
+        ...filters,
+        orderBy: {
+          createdAt: 'desc'
+        }
+      }))
 
       return {
         count: todoList.length,

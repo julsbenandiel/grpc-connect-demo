@@ -3,8 +3,11 @@ import express, { Request, Response } from "express";
 import { expressConnectMiddleware } from "@connectrpc/connect-express";
 import { todoServiceHandler } from "./handlers/todo";
 import { Interceptor } from "@connectrpc/connect";
+import cors from 'cors'
 
 const app = express();
+
+app.use(cors())
 
 const logger: Interceptor = (next) => async (req) => {
   console.log(`received message on ${req.url}`);
