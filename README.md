@@ -1,6 +1,9 @@
 ## Preview
 ![poc-1](https://github.com/user-attachments/assets/4e5e3230-ad6c-4b7a-85b6-fe2791d20d14)
 --------------------------------
+## Buf Schema Registry Preview
+![Screenshot 2024-10-19 at 11 21 32 PM](https://github.com/user-attachments/assets/650f0c17-a70e-4a56-b946-940cf1d65e6a)
+--------------------------------
 
 ## Services
 
