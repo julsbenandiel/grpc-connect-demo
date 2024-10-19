@@ -1,25 +1,46 @@
 import { ConnectRouter } from "@connectrpc/connect";
 import { CreateTodoRequest, GetTodoListRequest } from "../gen/todo_pb";
 import { TodoService } from "../gen/todo_connect";
+import { PrismaClient } from "@prisma/client";
+import { set } from 'lodash';
+
+const prisma = new PrismaClient();
 
 export function todoServiceHandler(router: ConnectRouter) {
   return router.service(TodoService, {
-    createTodo: async (request: CreateTodoRequest) => {
+    createTodo: async (req: CreateTodoRequest) => {
+      const newTodo = await prisma.todo.create({ 
+        data: { 
+          todo: req.todo 
+        }
+      })
+      
       return {
         todo: {
-          id: "1",
-          todo: request.todo
+          ...newTodo,
+          createdAt: newTodo.createdAt.toString(),
         }
       }
     },
-    getTodoList: async(request: GetTodoListRequest) => {
+    
+    getTodoList: async (req: GetTodoListRequest) => {
+      const filters = {}
+
+      if (req.id)
+        set(filters, 'where.id', req.id)
+
+      if (req.q)
+        set(filters, 'where.todo.contains', req.q)
+      
+      const todoList = await prisma.todo.findMany(filters)
+
       return {
-        count: 10,
-        todos: [
-          { id: "1", todo: "Walk the dog", createdAt: new Date().toString() },
-          { id: "2", todo: "Take out trash", createdAt: new Date().toString() },
-        ]
-      } 
+        count: todoList.length,
+        todos: todoList.map((todo) => ({
+          ...todo,
+          createdAt: todo.createdAt.toString()
+        }))
+      }
     }
   })
 }

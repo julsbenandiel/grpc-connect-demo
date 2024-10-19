@@ -11,7 +11,10 @@
     "buf-lint": "npx buf lint",
     "buf-gen": "npx buf generate",
     "dev": "npx tsx watch server.ts",
-    "client": "npx tsc client.ts"
+    "client": "npx tsc client.ts",
+    "prisma-generate": "npx prisma generate",
+    "prisma-migrate": "npx prisma migrate dev",
+    "prisma-studio": "npx prisma studio"
   },
   "dependencies": {
     "@bufbuild/buf": "^1.45.0",
@@ -21,15 +24,19 @@
     "@connectrpc/connect-express": "^1.0.0",
     "@connectrpc/connect-node": "^1.0.0",
     "@connectrpc/protoc-gen-connect-es": "^1.0.0",
+    "@prisma/client": "^5.21.1",
     "@types/node": "^22.7.7",
     "cors": "^2.8.5",
     "express": "^4.21.1",
     "fastify": "^5.0.0",
+    "lodash": "^4.17.21",
     "tsx": "^4.19.1",
     "typescript": "^5.6.3"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
-    "@types/express": "^5.0.0"
+    "@types/express": "^5.0.0",
+    "@types/lodash": "^4.17.12",
+    "prisma": "^5.21.1"
   }
 }
